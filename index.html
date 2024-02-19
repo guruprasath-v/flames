@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FLAMES | Using JavaScript</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+            font-family: "Space Mono", monospace;
+            /* overflow: hidden; */
+        }
+        main{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+        h3{
+            font-size: 3rem;
+
+        }
+        input, button{
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <h3>FLAMES Game Using JavaScript</h3>
+    <input type="text" id="name1" placeholder="Enter your name">
+    <br><br>
+    <input type="text" id="name2" placeholder="Enter your partner's name">
+    <br><br>
+    <input type="button" value="Click" onclick="calculateFLAMES()">
+    <h3 id="output"></h3>
+</main>
+
+    <script>
+        function calculateFLAMES() {
+            const name1 = document.getElementById("name1").value.toLowerCase();
+            const name2 = document.getElementById("name2").value.toLowerCase();
+
+            // Calculate the number of uncommon letters
+            const countLetters = new Set([...name1, ...name2]).size;
+
+            // Determine the FLAMES result
+            const flames = ["Friend", "Love", "Affection", "Marriage", "Enemies", "Sibling"];
+            const result = flames[countLetters % 6];
+
+            // Display the result
+            document.getElementById("output").innerHTML = `Your relationship is: ${result}`;
+        }
+    </script>
+</body>
+</html>
