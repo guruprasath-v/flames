@@ -27,14 +27,24 @@
         input, button{
             font-size: 2rem;
         }
+        a{
+            text-align: center;
+            display: block;
+            background-color: blue;
+            color: whitesmoke;
+            padding: 5px 0;
+        }
     </style>
 </head>
 <body>
+<header>
+    <a href="https://github.com/vikashpatel04" target="_blank">click to know about author</a>
+</header>
 <main>
-    <h3>FLAMES Game Using JavaScript</h3>
+    <h3 style="margin-top: 20px;">FLAMES Game Using JavaScript</h3><br>
     <input type="text" id="name1" placeholder="Enter your name">
-    <br><br>
-    <input type="text" id="name2" placeholder="Enter your partner's name">
+    <br>
+    <input type="text" id="name2" placeholder="your partner's name">
     <br><br>
     <input type="button" value="Click" onclick="calculateFLAMES()">
     <h3 id="output"></h3>
